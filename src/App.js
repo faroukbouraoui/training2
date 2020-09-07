@@ -1,26 +1,69 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+import "./App.css";
+import classnames from "classnames";
+
+class App extends Component {
+  /*  state = {
+    active: true,
+  };
+  render() {
+    const style = { color: "white", "font-weight": "bold" };
+    if (this.state.active) {
+      style.color = "yellow";
+    }
+    return (
+      <div>
+        <div
+          className={this.state.active ? "bg-green" : "bg-red"}
+          style={style}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          test
+        </div>
+        <button
+          onClick={() => {
+            this.setState({ active: !this.state.active });
+          }}
+        >
+          change active
+        </button>
+      </div>
+    );
+  }
 }
+*/
+  /* render() {
+   let classes = "";
 
+    if (true) classes += "green ";
+    if (true) classes += "whiteText ";
+    if (true) classes += "boldText ";
+    // or
+    classes = [];
+
+    if (true) classes.push("green");
+    if (true) classes.push("whiteText");
+    if (true) classes.push("boldText");
+    return (
+      <div>
+        <div className={classes.join(" ")}>Test</div>
+      </div>
+    );
+  }
+}
+*/
+  render() {
+    let classes = classnames({
+      green: 1 > 0,
+      whiteText: 2 < 4,
+      boldText: 8 == 8,
+    });
+
+    return (
+      <div>
+        <div className={classes}>Test</div>
+      </div>
+    );
+  }
+}
 export default App;
